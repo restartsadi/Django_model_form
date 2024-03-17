@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div>
+
+    <form action="" method="post">
+        {% csrf_token %}
+    <br>
+    <input type="text" name="name"><br><br>
+    <input type="email" name="email"><br><br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+{% if form.name and form.email %}
+
+<h1>This is User Data: {{form.name}} and the given mail is {{form.email}}</h1>
+
+{% endif %}
+</div>
+
+
+
+{% endblock %}
+
+
